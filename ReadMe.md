@@ -97,3 +97,6 @@ In order, these values mean:
 - Value 5: Always 0.
 - Value 6: File size in bytes, identical to value 2.
 - Value 7: Always 0. 
+
+## Building ##
+The code is simple C++. It uses some Windows-specific functions, and thus is not portable. I built my binaries with MinGW, but any compiler on Windows should work.
