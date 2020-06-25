@@ -86,7 +86,6 @@ int main(int argc, char* argv[])
         if (strcmp((char*) fbufout, "NISPACK"))
         {
             printf("Error: Invalid file header.\n");
-            fclose(src);
             return -1;
         }
         
