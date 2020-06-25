@@ -71,12 +71,17 @@ int main(int argc, char* argv[])
         fread(fbufin, insize, 1, src);
         fclose(src);
         
-        //Unscramble the input stream.
-        exor(fbufin, 0, insize, 0xF0);
-        ror(fbufin, 0, insize, 4);
-        
         fbufout = (unsigned char*) malloc(12);
         bufread(fbufout, fbufin, &inndex, 12); //Header
+        
+        if (strcmp((char*) fbufout, "NISPACK"))
+        {
+            //Unscramble the input stream.
+            exor(fbufin, 0, insize, 0xF0);
+            ror(fbufin, 0, insize, 4);
+            exor(fbufout, 0, 12, 0xF0);
+            ror(fbufout, 0, 12, 4);
+        }
         
         if (strcmp((char*) fbufout, "NISPACK"))
         {

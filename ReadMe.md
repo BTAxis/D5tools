@@ -16,7 +16,12 @@ The tools aren't very smart and expect to find only data they can use in the spe
 Below is some limited documentation on each tool.
 
 ### databaser ###
-This tool de-scrambles and extracts the database master file, Database_0.dat. It can also re-build the file from the member database files. The database files themselves are not touched and must be handled with other tools, or by hand.
+This tool de-scrambles and extracts NISPACK type data files. It can also re-build the files from the member files. The database files themselves are not touched and must be handled with other tools, or by hand. Compatible files include:
+- Database_0.dat
+- ANM_HI_\*.dat
+- Object_\*.dat
+- Start_\*.dat
+- charworld.dat, charworld_opt.dat, Effect.dat, Texture.dat and Texture_opt.dat, which are contained in Start_JP.dat
 
 ### musicDBer ###
 This tool picks apart music.dat (which is a member database of Database_0.dat), and puts it back together. It generates one file for each music track exposed to the player via the music gallery (which is all but a small number of tracks). The extension for the output files is .music, but they're just plain text files.
