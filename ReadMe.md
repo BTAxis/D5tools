@@ -1,7 +1,7 @@
 ## A small assortment of utilities for modding Disgaea 5 ##
 These are a few simple extraction and repacking tools for certain archives used by the PC version of Disgaea 5 Complete.
 
-All tools have the same usage syntax:
+All C++ based tools have the same usage syntax:
 ```
 tool.exe [options] [input] [output]
 Options:
@@ -102,6 +102,57 @@ In order, these values mean:
 - Value 5: Always 0.
 - Value 6: File size in bytes, identical to value 2.
 - Value 7: Always 0. 
+
+### dat2csv ###
+This is a Perl script that converts database files (which are retrieved from Database_0.dat) into .csv spread sheets, and back.
+
+Its usage syntax is:
+```
+dat2csv.pl <-decode/-encode> [options]
+      Options:
+        -decode: decode D5 database files into human-readable csv files.
+        -encode: encode csv files into D5 database files).
+        -scheme=<path>: Scheme file to use. If unspecified, './database_0.scheme' will be used.
+        -basedir=<path>: path to use for D5 database files. If unspecified, current directory will be used.
+        -csvdir=<path>: path to use for csv files. If unspecified, current directory will be used.
+        -verbose: print verbose debug output.
+        -help: print this message.
+```
+
+All options are optional, except for -encode and -decode, of which you must specify exactly one. You can abbreviate options, so '-d' is equivalent to '-decode' and '-s mypath' is equivalent to '-scheme=mypath'.
+
+The program needs to be provided with a scheme file, which defines the layout of the database files to convert. Multiple definitions may exist in sequence within the same file. A scheme definition looks like this:
+```
+[db=music.dat csv=music.csv]
+unused,					int	
+unused,					int	
+file,					int	
+Unlock,					int	
+trackname_JP,			string,		44
+trackname_EN,			string,		44
+trackname_FR,			string,		44
+trackname_CHN,			string,		44
+trackname_KOR,			string,		44
+trackdesc_JP,			string,		0xA0
+trackdesc_EN,			string,		0xA0
+trackdesc_FR,			string,		0xA0
+trackdesc_CHN,			string,		0xA0
+trackdesc_KOR,			string,		0xA0
+ID,				    	short
+???,					short
+List #,					int
+unused,					int	
+```
+
+The first line tells the program which file names to use for input and output. The lines below that define, in order, the data fields found in each entry of the database file. The fields are the label for the data field, the field's type, and if the type is a string, the size (in bytes) allocated for that string. All values must be separated by commas and an arbitrary amount of whitespace. Labels do not have to be unique; they are just used for the headings in the spread sheet.
+
+Available types are:
+- int: A signed integer, 4 bytes.
+- uint: An unsigned integer, 4 bytes. Shouldn't really be needed in most cases.
+- short: A signed short, 2 bytes.
+- string: what it says on the tin. You must also specify a size for the string. Sizes may be specified in decimal or hexadecimal notation.
+
+Not that this example provides the same basic functionality as the musicDBer tool above, but it outputs a .csv file instead of creating a separate file for each entry.
 
 ## Building ##
 The code is simple C++. It uses some Windows-specific functions, and thus is not portable. I built my binaries with MinGW, but any compiler on Windows should work.

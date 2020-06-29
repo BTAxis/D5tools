@@ -62,12 +62,18 @@ while (my $lien = <SCHEME>) {
             chomp $lien;
             if ($lien eq "") { next; } #in case there are any empty lines.
             elsif ($lien =~ /$schemepattern/i) {
-                my $size = 4; #4 bytes is the default, but use a different size if specified.
+                my $size;
                 if ($+{vtype} eq "uint") {
                     $scheme[1][$definition] = 'I'; #type
+                    $size = 4;
                 }
                 elsif ($+{vtype} eq "int") {
                     $scheme[1][$definition] = 'i'; #type
+                    $size = 4;
+                }
+                elsif ($+{vtype} eq "short") {
+                    $scheme[1][$definition] = 's'; #type
+                    $size = 2;
                 }
                 elsif ($+{vtype} eq "string")  {
                     $scheme[1][$definition] = 'Z'; #type
@@ -216,7 +222,7 @@ sub binread {
     my $rlen = $_[1];
     my $rtype = $_[2];
     
-    $rlen =~ /0x[\da-f]+/ and $rlen = hex($rlen);
+    $rlen =~ /0x[\da-f]+/i and $rlen = hex($rlen);
     
     my $bytes_read = read $fh, (my $bytes), $rlen;
     $bytes_read == $rlen or pdie ("Error: Could not read more than $bytes_read bytes when expected $rlen. Scheme might be incorrect.\n");
@@ -232,7 +238,7 @@ sub binwrite {
     my $bin;
     
     $rlen =~ /0x[\da-f]+/ and $rlen = hex($rlen);
-    $rtype eq "Z" and $bin = pack $rtype . $rlen, $data or $bin = pack $rtype, $data; #ints don't take a size for pack.
+    $rtype eq "Z" and $bin = pack $rtype . $rlen, $data or $bin = pack $rtype, $data; #only strings take a size for pack.
     
     print $fh $bin;
 }
@@ -248,9 +254,9 @@ sub usage {
       Options:
         -decode: decode D5 database files into human-readable csv files.
         -encode: encode csv files into D5 database files).
-        -scheme=[path]: Scheme file to use. If unspecified, './database_0.scheme' will be used.
-        -basedir=[path]: path to use for D5 database files. If unspecified, current directory will be used.
-        -csvdir=[path]: path to use for csv files. If unspecified, current directory will be used.
+        -scheme=<path>: Scheme file to use. If unspecified, './database_0.scheme' will be used.
+        -basedir=<path>: path to use for D5 database files. If unspecified, current directory will be used.
+        -csvdir=<path>: path to use for csv files. If unspecified, current directory will be used.
         -verbose: print verbose debug output.
         -help: print this message.
 ";
