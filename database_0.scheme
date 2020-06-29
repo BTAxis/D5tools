@@ -1,0 +1,79 @@
+[Curry.dat out=Curry.csv]
+ID,					uint,		4
+name_JP,			string,		40
+name_EN,			string,		40
+name_FR,			string,		40
+name_CHN,			string,		40
+name_KOR,			string,		40
+flag,				int,		4
+price,				int,		4
+HP,					int,		4
+SP,					int,		4
+ATK,				int,		4
+DEF,				int,		4
+INT,				int,		4
+RES,				int,		4
+HIT,				int,		4
+SPD,				int,		4
+MOV,				int,		4
+JMP,				int,		4
+RNG,				int,		4
+THR,				int,		4
+CNT,				int,		4
+CRT,				int,		4
+Resist Fist,		int,		4
+Resist Sword,		int,		4
+Resist Spear,		int,		4
+Resist Bow,			int,		4
+Resist Gun,			int,		4
+Resist Axe,			int,		4
+Resist Staff,		int,		4
+Resist Monster,		int,		4
+Resist Fire,		int,		4
+Resist Ice,			int,		4
+Resist Wind,		int,		4
+Resist Star,		int,		4
+Resist Poison,		int,		4
+Resist Sleep,		int,		4
+Resist Paralysis,	int,		4
+Resist Amnesia,		int,		4
+Resist Depravity,	int,		4
+UNKNOWN_1,			int,		4
+UNKNOWN_2,			int,		4
+UNKNOWN_3,			int,		4
+UNKNOWN_4,			int,		4
+UNKNOWN_5,			int,		4
+UNKNOWN_6,			int,		4
+UNKNOWN_7,			int,		4
+UNKNOWN_8,			int,		4
+UNKNOWN_9,			int,		4
+UNKNOWN_10,			int,		4
+UNKNOWN_11,			int,		4
+UNKNOWN_12,			int,		4
+UNKNOWN_13,			int,		4
+HP recovery,		int,		4
+SP recovery,		int,		4
+UNKNOWN_14,			int,		4
+EXP,				int,		4
+Mana,				int,		4
+Hl,					int,		4
+UNKNOWN_15,			int,		4
+Revenge,			int,		4
+UNKNOWN_16,			int,		4
+UNKNOWN_17,			int,		4
+Icon,				int,		4
+Description_JP,		string,		132
+Description_EN,		string,		132
+Description_FR,		string,		132
+Description_CHN,	string,		132
+Description_KOR,	string,		132
+Effects_JP,			string,		60
+Effects_EN,			string,		60
+Effects_FR,			string,		60
+Effects_CHN,		string,		60
+Effects_KOR,		string,		60
+Empty_JP,			string,		60
+Empty_EN,			string,		60
+Empty_FR,			string,		60
+Empty_CHN,			string,		60
+Empty_KOR,			string,		60
