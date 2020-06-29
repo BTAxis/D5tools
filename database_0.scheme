@@ -1,72 +1,180 @@
-[Curry.dat out=Curry.csv]
-ID,					uint,		4
-name_JP,			string,		40
-name_EN,			string,		40
-name_FR,			string,		40
-name_CHN,			string,		40
-name_KOR,			string,		40
-flag,				int,		4
-price,				int,		4
-HP,					int,		4
-SP,					int,		4
-ATK,				int,		4
-DEF,				int,		4
-INT,				int,		4
-RES,				int,		4
-HIT,				int,		4
-SPD,				int,		4
-MOV,				int,		4
-JMP,				int,		4
-RNG,				int,		4
-THR,				int,		4
-CNT,				int,		4
-CRT,				int,		4
-Resist Fist,		int,		4
-Resist Sword,		int,		4
-Resist Spear,		int,		4
-Resist Bow,			int,		4
-Resist Gun,			int,		4
-Resist Axe,			int,		4
-Resist Staff,		int,		4
-Resist Monster,		int,		4
-Resist Fire,		int,		4
-Resist Ice,			int,		4
-Resist Wind,		int,		4
-Resist Star,		int,		4
-Resist Poison,		int,		4
-Resist Sleep,		int,		4
-Resist Paralysis,	int,		4
-Resist Amnesia,		int,		4
-Resist Depravity,	int,		4
-UNKNOWN_1,			int,		4
-UNKNOWN_2,			int,		4
-UNKNOWN_3,			int,		4
-UNKNOWN_4,			int,		4
-UNKNOWN_5,			int,		4
-UNKNOWN_6,			int,		4
-UNKNOWN_7,			int,		4
-UNKNOWN_8,			int,		4
-UNKNOWN_9,			int,		4
-UNKNOWN_10,			int,		4
-UNKNOWN_11,			int,		4
-UNKNOWN_12,			int,		4
-UNKNOWN_13,			int,		4
-HP recovery,		int,		4
-SP recovery,		int,		4
-UNKNOWN_14,			int,		4
-EXP,				int,		4
-Mana,				int,		4
-Hl,					int,		4
-UNKNOWN_15,			int,		4
-Revenge,			int,		4
-UNKNOWN_16,			int,		4
-UNKNOWN_17,			int,		4
-Icon,				int,		4
-Description_JP,		string,		132
-Description_EN,		string,		132
-Description_FR,		string,		132
-Description_CHN,	string,		132
-Description_KOR,	string,		132
+[db=music.dat csv=music.csv]
+unused,					int	
+unused,					int	
+file,					int	
+Unlock,					int	
+trackname_JP,			string,		0x2C
+trackname_EN,			string,		0x2C
+trackname_FR,			string,		0x2C
+trackname_CHN,			string,		0x2C
+trackname_KOR,			string,		0x2C
+trackdesc_JP,			string,		0xA0
+trackdesc_EN,			string,		0xA0
+trackdesc_FR,			string,		0xA0
+trackdesc_CHN,			string,		0xA0
+trackdesc_KOR,			string,		0xA0
+ID,				    	short
+???,					short
+List #,					int
+unused,					int	
+[db=TownFuncCharCenter.dat csv=TownFuncCharCenter.csv]
+ID,					uint
+Character,			int
+Level,				int
+X coord,			int
+Y coord,			int
+???,				int
+Shop Type,			int
+Shop Icon,			int
+name_JP,			string,		0x40
+name_EN,			string,		0x40
+name_FR,			string,		0x40
+name_CHN,			string,		0x40
+name_KOR,			string,		0x40
+???,				int
+???,				int
+???,				int
+???,				int
+???,				int
+???,				int
+???,				int
+???,				int
+[db=CheatShopInformation.dat csv=CheatShopInformation.csv]
+ID,					uint
+name_JP,			string,		0x2C
+name_EN,			string,		0x2C
+name_FR,			string,		0x2C
+name_CHN,			string,		0x2C
+name_KOR,			string,		0x2C
+Desc1_JP,			string,		0x44
+Desc1_EN,			string,		0x44
+Desc1_FR,			string,		0x44
+Desc1_CHN,			string,		0x44
+Desc1_KOR,			string,		0x44
+Desc2_JP,			string,		0x44
+Desc2_EN,			string,		0x44
+Desc2_FR,			string,		0x44
+Desc2_CHN,			string,		0x44
+Desc2_KOR,			string,		0x44
+Expl1_JP,			string,		0x44
+Expl1_EN,			string,		0x44
+Expl1_FR,			string,		0x44
+Expl1_CHN,			string,		0x44
+Expl1_KOR,			string,		0x44
+Expl2_JP,			string,		0x44
+Expl2_EN,			string,		0x44
+Expl2_FR,			string,		0x44
+Expl2_CHN,			string,		0x44
+Expl2_KOR,			string,		0x44
+Expl3_JP,			string,		0x44
+Expl3_EN,			string,		0x44
+Expl3_FR,			string,		0x44
+Expl3_CHN,			string,		0x44
+Expl3_KOR,			string,		0x44
+Expl4_JP,			string,		0x44
+Expl4_EN,			string,		0x44
+Expl4_FR,			string,		0x44
+Expl4_CHN,			string,		0x44
+Expl4_KOR,			string,		0x44
+Expl5_JP,			string,		0x44
+Expl5_EN,			string,		0x44
+Expl5_FR,			string,		0x44
+Expl5_CHN,			string,		0x44
+Expl5_KOR,			string,		0x44
+Expl6_JP,			string,		0x44
+Expl6_EN,			string,		0x44
+Expl6_FR,			string,		0x44
+Expl6_CHN,			string,		0x44
+Expl6_KOR,			string,		0x44
+Expl7_JP,			string,		0x44
+Expl7_EN,			string,		0x44
+Expl7_FR,			string,		0x44
+Expl7_CHN,			string,		0x44
+Expl7_KOR,			string,		0x44
+Expl8_JP,			string,		0x44
+Expl8_EN,			string,		0x44
+Expl8_FR,			string,		0x44
+Expl8_CHN,			string,		0x44
+Expl8_KOR,			string,		0x44
+Expl9_JP,			string,		0x44
+Expl9_EN,			string,		0x44
+Expl9_FR,			string,		0x44
+Expl9_CHN,			string,		0x44
+Expl9_KOR,			string,		0x44
+Expl10_JP,			string,		0x44
+Expl10_EN,			string,		0x44
+Expl10_FR,			string,		0x44
+Expl10_CHN,			string,		0x44
+Expl10_KOR,			string,		0x44
+[db=Curry.dat csv=Curry.csv]
+ID,					uint
+name_JP,			string,		0x28
+name_EN,			string,		0x28
+name_FR,			string,		0x28
+name_CHN,			string,		0x28
+name_KOR,			string,		0x28
+flag,				int
+price,				int
+HP,					int
+SP,					int
+ATK,				int
+DEF,				int
+INT,				int
+RES,				int
+HIT,				int
+SPD,				int
+MOV,				int
+JMP,				int
+RNG,				int
+THR,				int
+CNT,				int
+CRT,				int
+R.Fist,				int
+R.Sword,			int
+R.Spear,			int
+R.Bow,				int
+R.Gun,				int
+R.Axe,				int
+R.Staff,			int
+R.Monster,			int
+R.Fire,				int
+R.Ice,				int
+R.Wind,				int
+R.Star,				int
+R.Poison,			int
+R.Sleep,			int
+R.Paralysis,		int
+R.Amnesia,			int
+R.Depravity,		int
+???,				int
+???,				int
+???,				int
+???,				int
+???,				int
+???,				int
+???,				int
+???,				int
+???,				int
+???,				int
+???,				int
+???,				int
+???,				int
+HP recovery,		int
+SP recovery,		int
+???,				int
+EXP,				int
+Mana,				int
+Hl,					int
+???,				int
+Revenge,			int
+???,				int
+???,				int
+Icon,				int
+Description_JP,		string,		0x84
+Description_EN,		string,		0x84
+Description_FR,		string,		0x84
+Description_CHN,	string,		0x84
+Description_KOR,	string,		0x84
 Effects_JP,			string,		60
 Effects_EN,			string,		60
 Effects_FR,			string,		60
