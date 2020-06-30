@@ -83,8 +83,16 @@ while (my $lien = <SCHEME>) {
                     $scheme[1][$definition] = 's'; #type
                     $size = 2;
                 }
+                elsif ($+{vtype} eq "ushort") {
+                    $scheme[1][$definition] = 'S'; #type
+                    $size = 2;
+                }
                 elsif ($+{vtype} eq "char") {
                     $scheme[1][$definition] = 'c'; #type
+                    $size = 1;
+                }
+                elsif ($+{vtype} eq "uchar") {
+                    $scheme[1][$definition] = 'C'; #type
                     $size = 1;
                 }
                 elsif ($+{vtype} eq "string")  {

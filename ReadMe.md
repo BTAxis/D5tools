@@ -152,7 +152,9 @@ Available types are:
 - int: A signed integer, 4 bytes.
 - uint: An unsigned integer, 4 bytes. Shouldn't really be needed in most cases.
 - short: A signed short, 2 bytes.
+- ushort: An unsigned short, 2 bytes.
 - char: A signed char, 1 byte.
+- uchar: An un signed char, 1 byte.
 - string: what it says on the tin. You must also specify a size for the string. Sizes may be specified in decimal or hexadecimal notation.
 
 Not that this example provides the same basic functionality as the musicDBer tool above, but it outputs a .csv file instead of creating a separate file for each entry.
