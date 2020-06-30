@@ -1,6 +1,5 @@
 [db=music.dat csv=music.csv]
-unused,					int	
-unused,					int	
+Unused(8),				string,		8
 file,					int	
 Unlock,					int	
 trackname_JP,			string,		0x2C
@@ -16,7 +15,7 @@ trackdesc_KOR,			string,		0xA0
 ID,				    	short
 ???,					short
 List #,					int
-unused,					int	
+Unused(4),				string,		4
 [db=TownFuncCharCenter.dat csv=TownFuncCharCenter.csv]
 ID,					uint
 Character,			int
@@ -219,7 +218,7 @@ Muscle,				char
 Emblem,				char
 ???,				char
 #mult,				char
-Unused,				short
+Unused(2),			string,		2
 [db=item.dat csv=item.csv]
 Price,				uquad
 HP,					quad
@@ -231,13 +230,13 @@ RES,				quad
 HIT,				quad
 SPD,				quad
 ID?,				int
-???(2),				short
-???(2),				short
-???(2),				short
-???(2),				short
+Type?,				short
+Icon?,				short
+MOV,				short
+CNT?,				short
 Unique Inn.,		short
 Grahpic,			short
-???(1),				char
+Shop excluded?,		char
 name_JP,			string,		0x40
 name_EN,			string,		0x40
 name_FR,			string,		0x40
@@ -249,29 +248,22 @@ desc_FR,			string,		0x88
 desc_CHN,			string,		0x88
 desc_KOR,			string,		0x88
 Unused(5),			string,		5
+IW point mult,		uchar
+Unused(1),			string,		1
+RNG,				uchar
+???(1),				uchar
+Unused(1),			string,		1
+CRT,				uchar
+???(1),				char
+Unused(7),			string,		7
+Min Rarity,			uchar
+Unused(1),			string,		1
+DLC?,				uchar
+Unused(1),			string,		1
+Machange?,	    	char
+Type,				uchar
+list #,				uchar
 ???(1),				char
 ???(1),				char
 ???(1),				char
-???(1),				char
-???(1),				char
-???(1),				char
-???(1),				char
-???(1),				char
-???(1),				char
-???(1),				char
-???(1),				char
-???(1),				char
-???(1),				char
-???(1),				char
-Min Rarity,			char
-???(1),				char
-???(1),				char
-???(1),				char
-???(1),				char
-Type,				char
-list #,				char
-???(1),				char
-???(1),				char
-???(1),				char
-???(1),				char
-???(1),				char
+Unused(2),			string,		2
