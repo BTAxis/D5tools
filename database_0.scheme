@@ -185,3 +185,93 @@ Empty_EN,			string,		60
 Empty_FR,			string,		60
 Empty_CHN,			string,		60
 Empty_KOR,			string,		60
+[db=HABIT.dat csv=HABIT.csv]
+Innocent Cap,		uint
+ID,					int
+???,				short
+name_JP,			string,		0x40
+name_EN,			string,		0x40
+name_FR,			string,		0x40
+name_CHN,			string,		0x40
+name_KOR,			string,		0x40
+desc_JP,			string,		0x90
+desc_EN,			string,		0x90
+desc_FR,			string,		0x90
+desc_CHN,			string,		0x90
+desc_KOR,			string,		0x90
+cons,				char
+fist,				char
+sword,				char
+spear,				char
+bow,				char
+gun,				char
+axe,				char
+staff,				char
+M.ph,				char
+M.mg,				char
+Armor,				char
+Belt,				char
+Shoe,				char
+Orb,				char
+Glass,				char
+Muscle,				char
+???,				char
+Emblem,				char
+???,				char
+#mult,				char
+Unused,				short
+[db=item.dat csv=item.csv]
+Price,				uquad
+HP,					quad
+SP,					quad
+ATK,				quad
+DEF,				quad
+INT,				quad
+RES,				quad
+HIT,				quad
+SPD,				quad
+ID?,				int
+???(2),				short
+???(2),				short
+???(2),				short
+???(2),				short
+Unique Inn.,		short
+Grahpic,			short
+???(1),				char
+name_JP,			string,		0x40
+name_EN,			string,		0x40
+name_FR,			string,		0x40
+name_CHN,			string,		0x40
+name_KOR,			string,		0x40
+desc_JP,			string,		0x88
+desc_EN,			string,		0x88
+desc_FR,			string,		0x88
+desc_CHN,			string,		0x88
+desc_KOR,			string,		0x88
+Unused(5),			string,		5
+???(1),				char
+???(1),				char
+???(1),				char
+???(1),				char
+???(1),				char
+???(1),				char
+???(1),				char
+???(1),				char
+???(1),				char
+???(1),				char
+???(1),				char
+???(1),				char
+???(1),				char
+???(1),				char
+Min Rarity,			char
+???(1),				char
+???(1),				char
+???(1),				char
+???(1),				char
+Type,				char
+list #,				char
+???(1),				char
+???(1),				char
+???(1),				char
+???(1),				char
+???(1),				char

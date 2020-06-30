@@ -71,9 +71,21 @@ while (my $lien = <SCHEME>) {
                     $scheme[1][$definition] = 'i'; #type
                     $size = 4;
                 }
+                elsif ($+{vtype} eq "quad") {
+                    $scheme[1][$definition] = 'q'; #type
+                    $size = 8;
+                }
+                elsif ($+{vtype} eq "uquad") {
+                    $scheme[1][$definition] = 'Q'; #type
+                    $size = 8;
+                }
                 elsif ($+{vtype} eq "short") {
                     $scheme[1][$definition] = 's'; #type
                     $size = 2;
+                }
+                elsif ($+{vtype} eq "char") {
+                    $scheme[1][$definition] = 'c'; #type
+                    $size = 1;
                 }
                 elsif ($+{vtype} eq "string")  {
                     $scheme[1][$definition] = 'Z'; #type
@@ -85,7 +97,7 @@ while (my $lien = <SCHEME>) {
                 $scheme[0][$definition] = $+{vname}; #name
                 $+{vsize} and $size = $+{vsize};
                 $scheme[2][$definition] = $size; #size
-                $verbose and print "Found variable: \"$1\", type: $2, size: $size\n";
+                $verbose and print "Found variable: \"".$+{vname}."\", type: ".$+{vtype}.", size: ".$size."\n";
             }
             #Scheme concludes if new scheme definition encountered.
             #However, this will read a line we'll need later, so save that.
@@ -135,7 +147,7 @@ sub decode {
 
     open OUT, '>', "$csvdir/$outname";
     for (my $j = 0; $j < $schemesize; $j++) {
-        print OUT $scheme[0][$j] . ",";
+        print OUT "\"" . $scheme[0][$j] . "\",";
     }
     print OUT "\n";
     
@@ -145,6 +157,7 @@ sub decode {
         for (my $j = 0; $j < $schemesize; $j++) {
             $j and print OUT ',';
             my $something = binread($fh, $scheme[2][$j], $scheme[1][$j]);
+            $scheme[1][$j] eq 'Z' and $something =~ s/"/”/g;
             print OUT "\"$something\"";
         }
         print OUT "\n";
@@ -205,6 +218,7 @@ sub encode {
             #csv quotes don't go into the output database.
             my $data = $+{capture};
             $data =~ s/^\"(.*)\"$/$1/;
+            $scheme[1][$element] eq 'Z' and $data =~ s/”/"/g; #Bug: this breaks Japanese quotes, but it doesn't break the game I think.
             
             binwrite($fh, $scheme[2][$element], $scheme[1][$element], $data);
             $element++;

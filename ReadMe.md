@@ -147,9 +147,12 @@ unused,					int
 The first line tells the program which file names to use for input and output. The lines below that define, in order, the data fields found in each entry of the database file. The fields are the label for the data field, the field's type, and if the type is a string, the size (in bytes) allocated for that string. All values must be separated by commas and an arbitrary amount of whitespace. Labels do not have to be unique; they are just used for the headings in the spread sheet.
 
 Available types are:
+- quad: A signed 64-bit integer, 8 bytes.
+- uquad: An unsigned 64-bit integer, 8 bytes.
 - int: A signed integer, 4 bytes.
 - uint: An unsigned integer, 4 bytes. Shouldn't really be needed in most cases.
 - short: A signed short, 2 bytes.
+- char: A signed char, 1 byte.
 - string: what it says on the tin. You must also specify a size for the string. Sizes may be specified in decimal or hexadecimal notation.
 
 Not that this example provides the same basic functionality as the musicDBer tool above, but it outputs a .csv file instead of creating a separate file for each entry.
