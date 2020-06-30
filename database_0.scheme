@@ -247,23 +247,24 @@ desc_EN,			string,		0x88
 desc_FR,			string,		0x88
 desc_CHN,			string,		0x88
 desc_KOR,			string,		0x88
-Unused(5),			string,		5
+Blank,				string,		5
 IW point mult,		uchar
-Unused(1),			string,		1
+Blank,				string,		1
 RNG,				uchar
 ???(1),				uchar
-Unused(1),			string,		1
+???(1),				uchar
 CRT,				uchar
 ???(1),				char
-Unused(7),			string,		7
+Blank,				string,		3
+???(4),				int
 Min Rarity,			uchar
-Unused(1),			string,		1
+Blank,				string,		1
 DLC?,				uchar
-Unused(1),			string,		1
+Blank,				string,		1
 Machange?,	    	char
 Type,				uchar
 list #,				uchar
 ???(1),				char
 ???(1),				char
 ???(1),				char
-Unused(2),			string,		2
+Blank,				string,		2
